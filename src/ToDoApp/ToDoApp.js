@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import ToDoList from './ToDoList.js';
 import { connect } from 'react-redux';
-import { actionCreators } from '../store/ToDoApp.js';
-import { bindActionCreators } from 'redux';
+import { mapDispatchToProps } from '../store/ToDoApp.js';
 
 class ToDoApp extends Component {
     constructor(props) {
@@ -76,7 +75,9 @@ class ToDoApp extends Component {
     }
   }
 
+  
+
   export default connect(
     state => state.todo,
-    dispatch => bindActionCreators(actionCreators, dispatch)
+    dispatch => mapDispatchToProps(dispatch)
   )(ToDoApp);

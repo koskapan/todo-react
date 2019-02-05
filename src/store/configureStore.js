@@ -10,6 +10,5 @@ export default function configureStore() {
         ...reducers
     });
 
-    return createStore(
-        rootReducer);
+    return createStore(rootReducer);
 }
