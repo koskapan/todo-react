@@ -19,8 +19,8 @@ export const mapDispatchToProps = (dispatch) => {
             dispatch({type: deleteActionType, items: items});
         },
         edit: async (item) => {
-            await itemsService.editItem(item.id, item.text);
-            const items = itemsService.getItems();
+            await itemsService.editItem(item.id, item);
+            const items = await itemsService.getItems();
             dispatch({type: editActionType, items: items});
         }
     }

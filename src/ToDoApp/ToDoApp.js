@@ -5,7 +5,6 @@ import { mapDispatchToProps } from '../store/ToDoApp.js';
 
 class ToDoApp extends Component {
     constructor(props) {
-      console.log(props);
       super(props);
       this.state = { items: props.items, text : '', currentItemId: ''}
       this.handleDelete = this.handleDelete.bind(this);
@@ -39,9 +38,6 @@ class ToDoApp extends Component {
     }
   
     onSubmit(e) {
-      console.log(this.props);
-      console.log(this.props.items);
-      console.log(this.props.create);
       e.preventDefault();
       if (this.state.text === '')  {
         return;

@@ -24,12 +24,12 @@ class ItemsService {
         return newItem;
     }
 
-    async editItem(id, text) {
+    async editItem(id, newItem) {
         let editedItem = {}
         
         this.items = this.items.filter( function(item) {
             if (item.id === id) {
-                item.text = text;
+                item.text = newItem.text;
                 editedItem = item;
             }
             return item;            
